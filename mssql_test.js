@@ -1,9 +1,9 @@
 var sql = require('mssql');
 var sqlConfig = {
-    server: 'ANDY\\LOCALDB',
+    server: 'ANDY',
     user: 'sa',
-    password: 'a123456*',
-    database: 'test',
+    password: '123456',
+    database: 'HR',
     port: 1433,
     options: {
         encrypt: false
@@ -16,7 +16,7 @@ function getList() {
     conn.connect(function(err) {
         //if (err) throw err;
         var req = new sql.Request(conn);
-        req.query('select * from Persons', function(err, recordset) {
+        req.query('select * from Personal', function(err, recordset) {
             if (err) throw err;
             else
                 console.log(recordset);
